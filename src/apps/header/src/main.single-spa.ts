@@ -1,6 +1,4 @@
-import { enableProdMode, NgZone } from '@angular/core';
-
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { NgZone } from '@angular/core';
 import { Router, NavigationStart, provideRouter } from '@angular/router';
 
 import {
