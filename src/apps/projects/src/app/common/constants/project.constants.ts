@@ -28,7 +28,7 @@ export const COMPANIES: Company[] = [
   },
   {
     id: 5,
-    name: 'Amor Saude',
+    name: 'Amor Saúde',
     location: 'São Paulo, Brazil',
     imageUrl: '../../../assets/logos/amor-saude.png'
   },
@@ -113,7 +113,16 @@ export const PROJECTS: Project[] = [
     description: 'An app for Viasat technicians that optimizes service visits with features like efficient scheduling, real-time communication, and access to customer information, enhancing service quality.',
     companyId: 4
   },
-  { id: 12, title: 'Project 12', description: 'Description for Project 12', companyId: 5 },
-  { id: 13, title: 'Project 13', description: 'Description for Project 13', companyId: 6 },
-  { id: 14, title: 'Project 14', description: 'Description for Project 14', companyId: 7 }
+  {
+    id: 12, title: 'Amor Saúde', description: 'A platform designed for scheduling and conducting doctor appointments. Users can easily book consultations and communicate directly with their doctors. The platform also allows users to check their appointment dates and manage their medical schedules efficiently.',
+    companyId: 5
+  },
+  {
+    id: 13, title: 'POS', description: 'A system for the restaurant industry. This system enhances kitchen efficiency, streamlines operations, and improves customer service. The POS solution is intuitive, scalable, and is used by well-known brands like McDonald\'s and Dutch Bros.',
+    companyId: 6
+  },
+  {
+    id: 14, title: 'Instacasino', description: 'An online betting site where users can play casino games like slots, poker, and roulette, and place bets securely. It ensures a user-friendly experience with advanced security measures and compliance with regulations.',
+    companyId: 7
+  }
 ];
