@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { AssetUrlPipe } from '../../shared/pipes/asset-url.pipe';
-import { PERSONAL_INFO, WORK_EXPERIENCE } from '../../constant/work-experience';
+import { PERSONAL_INFO, WORK_EXPERIENCE } from '../../constants/work-experience.contants';
 import { NgFor } from '@angular/common';
-import { ANGULAR_SKILLS, OTHER_SKILLS } from '../../constant/skills';
+import { ANGULAR_SKILLS, OTHER_SKILLS } from '../../constants/skills.contants';
 
 @Component({
   selector: 'app-home',
@@ -12,8 +12,8 @@ import { ANGULAR_SKILLS, OTHER_SKILLS } from '../../constant/skills';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
-  personalInfo = PERSONAL_INFO;
-  workExperience = WORK_EXPERIENCE;
-  angularSkills = ANGULAR_SKILLS;
-  otherSkills = OTHER_SKILLS;
+  public personalInfo = PERSONAL_INFO;
+  public workExperience = WORK_EXPERIENCE;
+  public angularSkills = ANGULAR_SKILLS;
+  public otherSkills = OTHER_SKILLS;
 }
