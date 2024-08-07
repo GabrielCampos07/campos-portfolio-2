@@ -3,7 +3,7 @@ export const WORK_EXPERIENCE = [
     companyName: 'Dev Pro',
     position: 'Angular Developer',
     period: '05.2024 - Present',
-    location: 'New York, USA',
+    location: 'Las Vegas, USA',
     overview:
       'Dev Pro is a renowned software development company specializing in innovative and scalable solutions. I work for Xenial, a client of Dev Pro, which provides advanced Point of Sale (POS) solutions for the restaurant industry. Xenial\'s systems, used by brands like McDonald\'s and Dutch Bros, enhance kitchen efficiency and customer service through cutting-edge technology.',
     team: '100+ members, consisting of developers, UX/UI designers, and project managers.',
