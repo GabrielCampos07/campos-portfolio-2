@@ -27,7 +27,7 @@ const lifecycles = singleSpaAngular({
       ],
     });
   },
-  template: '<header-root />',
+  template: '<home-root />',
   Router,
   NavigationStart,
   NgZone,

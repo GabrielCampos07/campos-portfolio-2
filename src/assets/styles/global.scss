@@ -1,0 +1,19 @@
+html,
+body,
+main {
+	height: 100%;
+	max-height: 100%;
+}
+
+.main-content {
+	height: 95%;
+}
+
+.main-content {
+	background-color: #f8f9fa;
+	padding: 20px;
+}
+
+[id^="single-spa-application:"] {
+	height: 100%;
+}
