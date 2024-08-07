@@ -7,11 +7,11 @@ export const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'home',
+        redirectTo: 'projects',
         pathMatch: 'full',
       },
       {
-        path: 'home',
+        path: 'projects',
         loadComponent: () => import('./common/components/projects/projects.component').then(m => m.ProjectsComponent)
       }
     ],

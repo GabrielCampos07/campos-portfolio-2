@@ -2,7 +2,7 @@ export const WORK_EXPERIENCE = [
   {
     companyName: 'Dev Pro',
     position: 'Angular Developer',
-    period: '05.2023 - Present',
+    period: '05.2024 - Present',
     location: 'New York, USA',
     overview:
       'Dev Pro is a leading provider of Point of Sale (POS) solutions specifically designed for the restaurant industry, with a focus on enhancing kitchen efficiency. Their innovative systems are employed by several renowned brands, including McDonald\'s and Dutch Bros, to streamline operations, manage orders, and improve customer service through advanced technology. This project involves developing robust POS systems that are intuitive and scalable to meet the demands of the fast-paced restaurant industry.',
@@ -50,4 +50,5 @@ export const PERSONAL_INFO = {
   role: 'Angular Developer',
   welcomeMessage:
     "I'm glad you are here, welcome! I have been working as an Angular developer for 4 years and have been involved in numerous projects throughout my career. Feel free to take a look at my skills. :)",
+  curiosities: "I love reading books. If you need a recommendation, try 'They Both Die at the End.' Live each day like it's your last, as you never know when unexpected events might occur, like the death central call you telling you can die in the next 24 hours."
 };
