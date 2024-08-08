@@ -78,6 +78,3 @@ jobs:
         working-directory: ./src/apps/contacts
         env:
           CI: true
-
-      - name: Build Application
-        run: npm run build
