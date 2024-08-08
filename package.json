@@ -3,7 +3,7 @@
 	"scripts": {
 		"start": "concurrently --kill-others-on-fail \"yarn:start:root\" \"yarn:start:all-micro-frontends\"",
 		"start:root": "webpack serve --port 9000 --env isLocal",
-		"start:all-micro-frontends": "concurrently --names \"header, home, projects\" --prefix \"name\" \"yarn --cwd src/apps/header serve:single-spa:header\" \"yarn --cwd src/apps/home serve:single-spa:home\" \"yarn --cwd src/apps/projects serve:single-spa:projects\"",
+		"start:all-micro-frontends": "concurrently --names \"header, home, projects, contacts\" --prefix \"name\" \"yarn --cwd src/apps/header serve:single-spa:header\" \"yarn --cwd src/apps/home serve:single-spa:home\" \"yarn --cwd src/apps/projects serve:single-spa:projects\" \"yarn --cwd src/apps/contacts serve:single-spa:contacts\"",
 		"lint": "eslint src --ext js,ts,tsx",
 		"test": "cross-env BABEL_ENV=test jest --passWithNoTests",
 		"format": "prettier --write .",
