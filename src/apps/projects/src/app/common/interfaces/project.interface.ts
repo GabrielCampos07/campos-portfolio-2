@@ -1,6 +1,6 @@
 export interface Project {
-  id: number;
-  title: string;
-  description: string;
-  companyId: number;
+	id: number;
+	title: string;
+	description: string;
+	companyId: number;
 }
