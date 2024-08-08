@@ -2,9 +2,9 @@
 	"imports": {
 		"@single-spa/welcome": "https://unpkg.com/single-spa-welcome/dist/single-spa-welcome.js",
 		"@campos-portfolio/root-config": "/campos-portfolio-root-config.js",
-		"header": "//localhost:4200/main.js",
-		"home": "//localhost:4201/main.js",
-		"projects": "//localhost:4202/main.js",
-		"contacts": "//localhost:4203/main.js"
+		"header": "/main.js",
+		"home": "/main.js",
+		"projects": "/main.js",
+		"contacts": "/main.js"
 	}
 }
