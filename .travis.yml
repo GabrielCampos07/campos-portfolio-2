@@ -1,0 +1,21 @@
+language: node_js
+node_js:
+  - node
+script:
+  - npm install
+  - npm run build
+  - echo "Commit sha - $CAMPOS_COMMIT"
+  - mkdir -p dist/@campos-portfolio/root-config/$CAMPOS_COMMIT
+  - mv dist/*.* dist/@campos-portfolio/root-config/$CAMPOS_COMMIT/
+deploy:
+  provider: s3
+  access_key_id: "$AWS_ACCESS_KEY_ID"
+  secret_access_key: "$AWS_SECRET_ACCESS_KEY"
+  bucket: "single-spa-portfolio"
+  region: "us-east-2"
+  cache_control: "max-age=31536000"
+  acl: "public_read"
+  local_dir: dist
+  skip_cleanup: true
+  on:
+    branch: main
