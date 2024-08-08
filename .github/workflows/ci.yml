@@ -1,0 +1,80 @@
+name: CI Pipeline for Multi-Project Setup
+
+on:
+  push:
+    branches:
+      - "**"
+  pull_request:
+    branches:
+      - "**"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Cache Node.js modules
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install Dependencies for Root
+        run: npm install
+        working-directory: .
+        env:
+          CI: true
+          NODE_DEBUG: "fs,stream,zlib"
+
+      - name: Install Dependencies for Header
+        run: npm install
+        working-directory: ./src/apps/header
+        env:
+          CI: true
+          NODE_DEBUG: "fs,stream,zlib"
+
+      - name: Install Dependencies for Home
+        run: npm install
+        working-directory: ./src/apps/home
+        env:
+          CI: true
+          NODE_DEBUG: "fs,stream,zlib"
+
+      - name: Install Dependencies for Contacts
+        run: npm install
+        working-directory: ./src/apps/contacts
+        env:
+          CI: true
+          NODE_DEBUG: "fs,stream,zlib"
+
+      - name: Run Tests for Header
+        run: npm test
+        working-directory: ./src/apps/header
+        env:
+          CI: true
+
+      - name: Run Tests for Home
+        run: npm test
+        working-directory: ./src/apps/home
+        env:
+          CI: true
+
+      - name: Run Tests for Contacts
+        run: npm test
+        working-directory: ./src/apps/contacts
+        env:
+          CI: true
