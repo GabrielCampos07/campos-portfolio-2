@@ -1,12 +1,12 @@
-name: CI Pipeline for Header
+name: CI Pipeline for Multi-Project Setup
 
 on:
   push:
     branches:
-      - '**'
+      - "**"
   pull_request:
     branches:
-      - '**'
+      - "**"
 
 jobs:
   build:
@@ -33,14 +33,51 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
-      - name: Install Dependencies
+      - name: Install Dependencies for Root
         run: npm install
+        working-directory: .
         env:
           CI: true
-          NODE_DEBUG: 'fs,stream,zlib'
+          NODE_DEBUG: "fs,stream,zlib"
 
-      - name: Run lint
-        run: npm run lint
+      - name: Install Dependencies for Header
+        run: npm install
+        working-directory: ./src/apps/header
+        env:
+          CI: true
+          NODE_DEBUG: "fs,stream,zlib"
+
+      - name: Install Dependencies for Home
+        run: npm install
+        working-directory: ./src/apps/home
+        env:
+          CI: true
+          NODE_DEBUG: "fs,stream,zlib"
+
+      - name: Install Dependencies for Contacts
+        run: npm install
+        working-directory: ./src/apps/contacts
+        env:
+          CI: true
+          NODE_DEBUG: "fs,stream,zlib"
+
+      - name: Run Tests for Header
+        run: npm test
+        working-directory: ./src/apps/header
+        env:
+          CI: true
+
+      - name: Run Tests for Home
+        run: npm test
+        working-directory: ./src/apps/home
+        env:
+          CI: true
+
+      - name: Run Tests for Contacts
+        run: npm test
+        working-directory: ./src/apps/contacts
+        env:
+          CI: true
 
       - name: Build Application
         run: npm run build
