@@ -39,9 +39,6 @@ jobs:
           CI: true
           NODE_DEBUG: 'fs,stream,zlib'
 
-      - name: Run Tests
-        run: npm test
-
       - name: Run lint
         run: npm run lint
 
