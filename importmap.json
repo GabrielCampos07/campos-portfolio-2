@@ -1,6 +1,5 @@
 {
 	"imports": {
-		"@single-spa/welcome": "https://unpkg.com/single-spa-welcome/dist/single-spa-welcome.js",
 		"@campos-portfolio/root-config": "/campos-portfolio-root-config.js",
 		"header": "/main.js",
 		"home": "/main.js",
