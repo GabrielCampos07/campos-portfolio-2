@@ -1,13 +1,13 @@
+os: linux
 language: node_js
 node_js:
   - "18"
-dist: xenial
+dist: xenial 
 script:
-  - npm install
   - npm run build
-  - echo "Commit sha - $CAMPOS_COMMIT"
-  - mkdir -p dist/@campos-portfolio/root-config/$CAMPOS_COMMIT
-  - mv dist/*.* dist/@campos-portfolio/root-config/$CAMPOS_COMMIT/
+  - echo "Commit sha - $TRAVIS_COMMIT"
+  - mkdir -p dist/@thawkin3/root-config/$TRAVIS_COMMIT
+  - mv dist/*.* dist/@thawkin3/root-config/$TRAVIS_COMMIT/
 deploy:
   provider: s3
   access_key_id: "$AWS_ACCESS_KEY_ID"
@@ -17,6 +17,6 @@ deploy:
   cache_control: "max-age=31536000"
   acl: "public_read"
   local_dir: dist
-  skip_cleanup: true
+  cleanup: false
   on:
     branch: main
