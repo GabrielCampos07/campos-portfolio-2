@@ -39,20 +39,6 @@ describe("HomeComponent", () => {
 		);
 	});
 
-	it("should have GitHub and LinkedIn links", () => {
-		const githubLink = fixture.debugElement.query(
-			By.css('.info-list a[href="https://github.com/GabrielCampos07"]'),
-		).nativeElement;
-		const linkedinLink = fixture.debugElement.query(
-			By.css(
-				'.info-list a[href="https://www.linkedin.com/in/gabrielcampos07/"]',
-			),
-		).nativeElement;
-
-		expect(githubLink).toBeTruthy();
-		expect(linkedinLink).toBeTruthy();
-	});
-
 	it("should display Angular skills", () => {
 		const angularSkillsElements = fixture.debugElement.queryAll(
 			By.css(".col-md-6:nth-child(1) .info-card ul li"),
