@@ -5,11 +5,14 @@ node_js:
 dist: focal
 install:
   - yarn install
-  - echo "Commit sha - $TRAVIS_COMMIT"
 script:
   - yarn build
-  - mkdir -p dist/@thawkin3/root-config/$TRAVIS_COMMIT
-  - rsync -av --progress dist/ dist/@thawkin3/root-config/$TRAVIS_COMMIT --exclude '@thawkin3'
+  - echo "Commit sha - $TRAVIS_COMMIT"
+  - export BUILD_DIR=$(find dist -type d -name '*' -exec test -e "{}/index.html" ';' -print)
+before_deploy:
+  - export LOCAL_DIR=dist/@thawkin3/root-config/$TRAVIS_COMMIT
+  - mkdir -p $LOCAL_DIR
+  - mv "$BUILD_DIR"/* $LOCAL_DIR/
 deploy:
   provider: s3
   access_key_id: "$AWS_ACCESS_KEY_ID"
@@ -17,7 +20,7 @@ deploy:
   bucket: "$AWS_BUCKET_NAME"
   region: "$AWS_BUCKET_REGION"
   cache_control: "max-age=31536000"
-  local_dir: dist/@thawkin3/root-config/$TRAVIS_COMMIT
+  local_dir: "$LOCAL_DIR"
   cleanup: false
   on:
     branch: main
