@@ -8,7 +8,7 @@ install:
 script:
   - yarn build
   - echo "Commit sha - $TRAVIS_COMMIT"
-  - export LOCAL_DIR=$(find dist -type d -name "$TRAVIS_COMMIT")
+  - export LOCAL_DIR=$(find dist -type f -name "index.html" -exec dirname {} \;)
 before_deploy:
   - if [ -d "$LOCAL_DIR" ]; then echo "Directory $LOCAL_DIR exists."; else echo "Directory $LOCAL_DIR does not exist, failing build."; exit 1; fi
 deploy:
