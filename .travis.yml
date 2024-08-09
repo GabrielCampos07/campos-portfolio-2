@@ -14,7 +14,6 @@ deploy:
   bucket: "single-spa-portfolio"
   region: "us-east-2"
   cache_control: "max-age=31536000"
-  acl: "public_read"
   cleanup: false
   on:
     branch: main
