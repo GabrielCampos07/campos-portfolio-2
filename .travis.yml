@@ -7,8 +7,6 @@ install:
   - yarn install
 script:
   - yarn build
-  - ls -la
-  - ls -la dist
   - echo "Commit sha - $TRAVIS_COMMIT"
   - mkdir -p dist/@campos-portfolio/root-config/$TRAVIS_COMMIT
   - mv dist/*.* dist/@campos-portfolio/root-config/$TRAVIS_COMMIT/
@@ -20,7 +18,7 @@ deploy:
   region: "us-east-2"
   cache_control: "max-age=31536000"
   acl: "public_read"
-  local_dir: dist
+  local_dir: "dist"
   cleanup: false
   on:
     branch: main
