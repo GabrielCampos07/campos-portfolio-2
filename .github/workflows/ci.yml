@@ -34,29 +34,8 @@ jobs:
             ${{ runner.os }}-node-
 
       - name: Install Dependencies for Root
-        run: npm install
+        run: yarn install
         working-directory: .
-        env:
-          CI: true
-          NODE_DEBUG: "fs,stream,zlib"
-
-      - name: Install Dependencies for Header
-        run: npm install
-        working-directory: ./src/apps/header
-        env:
-          CI: true
-          NODE_DEBUG: "fs,stream,zlib"
-
-      - name: Install Dependencies for Home
-        run: npm install
-        working-directory: ./src/apps/home
-        env:
-          CI: true
-          NODE_DEBUG: "fs,stream,zlib"
-
-      - name: Install Dependencies for Contacts
-        run: npm install
-        working-directory: ./src/apps/contacts
         env:
           CI: true
           NODE_DEBUG: "fs,stream,zlib"
