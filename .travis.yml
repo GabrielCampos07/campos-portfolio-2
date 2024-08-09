@@ -2,7 +2,7 @@ os: linux
 language: node_js
 node_js:
   - "18"
-dist: bionic
+dist: focal
 install:
   - yarn install
 script:
