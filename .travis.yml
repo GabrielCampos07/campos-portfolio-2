@@ -9,7 +9,7 @@ install:
 script:
   - yarn build
   - mkdir -p dist/@thawkin3/root-config/$TRAVIS_COMMIT
-  - mv dist/* dist/@thawkin3/root-config/$TRAVIS_COMMIT/
+  - rsync -av --progress dist/ dist/@thawkin3/root-config/$TRAVIS_COMMIT --exclude '@thawkin3'
 deploy:
   provider: s3
   access_key_id: "$AWS_ACCESS_KEY_ID"
