@@ -7,9 +7,6 @@ install:
   - yarn install
 script:
   - yarn build
-  - echo "Commit sha - $TRAVIS_COMMIT"
-  - mkdir -p dist/@campos-portfolio/root-config/$TRAVIS_COMMIT
-  - mv dist/*.* dist/@campos-portfolio/root-config/$TRAVIS_COMMIT/
 deploy:
   provider: s3
   access_key_id: "$AWS_ACCESS_KEY_ID"
