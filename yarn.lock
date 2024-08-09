@@ -24,6 +24,13 @@
   dependencies:
     tslib "^2.3.0"
 
+"@angular/forms@^18.1.4":
+  version "18.1.4"
+  resolved "https://registry.yarnpkg.com/@angular/forms/-/forms-18.1.4.tgz#dfa9bb0b3cd36c3d387fca50887cf0bc25b77df2"
+  integrity sha512-PYaQ7/2toAwgJWIznVWgJAd3l8mjAreilGOVIMbBIaotL/EHRQjhlikitJEFDGXeVUarY/rm3IlLWBYnLyliyg==
+  dependencies:
+    tslib "^2.3.0"
+
 "@angular/platform-browser-dynamic@^18.1.3":
   version "18.1.3"
   resolved "https://registry.npmjs.org/@angular/platform-browser-dynamic/-/platform-browser-dynamic-18.1.3.tgz"
