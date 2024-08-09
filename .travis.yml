@@ -5,15 +5,19 @@ node_js:
 dist: focal
 install:
   - yarn install
+  - echo "Commit sha - $TRAVIS_COMMIT"
 script:
   - yarn build
+  - mkdir -p dist/@thawkin3/root-config/$TRAVIS_COMMIT
+  - mv dist/* dist/@thawkin3/root-config/$TRAVIS_COMMIT/
 deploy:
   provider: s3
   access_key_id: "$AWS_ACCESS_KEY_ID"
   secret_access_key: "$AWS_SECRET_ACCESS_KEY"
-  bucket: "single-spa-portfolio"
-  region: "us-east-2"
+  bucket: "$AWS_BUCKET_NAME"
+  region: "$AWS_BUCKET_REGION"
   cache_control: "max-age=31536000"
+  local_dir: dist/@thawkin3/root-config/$TRAVIS_COMMIT
   cleanup: false
   on:
     branch: main
