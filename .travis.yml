@@ -7,6 +7,11 @@ install:
   - yarn install
 script:
   - yarn build
+  - echo "Checking for dist directory after build:"
+  - ls -la $TRAVIS_BUILD_DIR/dist
+before_deploy:
+  - echo "Checking for dist directory before deploy:"
+  - if [ -d "$TRAVIS_BUILD_DIR/dist" ]; then echo "Directory $TRAVIS_BUILD_DIR/dist exists."; else echo "Directory $TRAVIS_BUILD_DIR/dist does not exist, failing build."; exit 1; fi
 deploy:
   provider: s3
   access_key_id: "$AWS_ACCESS_KEY_ID"
