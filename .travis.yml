@@ -5,6 +5,8 @@ node_js:
 dist: focal
 install:
   - yarn install
+script:
+  - echo "Skipping build during script phase"
 before_deploy:
   - yarn build
 deploy:
