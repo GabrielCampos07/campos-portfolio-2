@@ -8,11 +8,9 @@ install:
 script:
   - yarn build
   - echo "Commit sha - $TRAVIS_COMMIT"
-  - export BUILD_DIR=$(find dist -type d -name '*' -exec test -e "{}/index.html" ';' -print)
+  - export LOCAL_DIR=$(find dist -type d -name "$TRAVIS_COMMIT")
 before_deploy:
-  - export LOCAL_DIR=dist/@thawkin3/root-config/$TRAVIS_COMMIT
-  - mkdir -p $LOCAL_DIR
-  - mv "$BUILD_DIR"/* $LOCAL_DIR/
+  - if [ -d "$LOCAL_DIR" ]; then echo "Directory $LOCAL_DIR exists."; else echo "Directory $LOCAL_DIR does not exist, failing build."; exit 1; fi
 deploy:
   provider: s3
   access_key_id: "$AWS_ACCESS_KEY_ID"
